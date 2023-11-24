@@ -1,0 +1,57 @@
+<ion-content
+  [fullscreen]="true"
+  class="ion-padding magnolia ion-page"
+  id="main-content"
+>
+  <ion-button
+    (click)="volver()"
+    expand="block"
+    color="ion-color-warning"
+    class="primario-bg-button"
+    >Volver</ion-button
+  >
+  <ion-grid>
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="6">
+        <img
+          class="logo"
+          src="../../../assets/img/logo.png"
+          alt="monster inc"
+        />
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="12">
+        <h1
+          class="ion-text-center"
+          style="text-shadow: 2px 2px 5px #000000; color: #ffffff"
+        >
+          Ventas Registradas
+        </h1>
+        <h1
+          class="ion-text-center"
+          style="text-shadow: 2px 2px 5px #000000; color: #ffffff"
+        >
+          {{nombre}}
+        </h1>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let venta of ventas" class="ion-align-items-center">
+      <ion-col size="12">
+        <ion-card color="light">
+          <ion-card-header>
+            <ion-card-title>Código: {{venta.codigo}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p>Fecha: {{venta.fecha}}</p>
+            <p>ID: {{venta.id}}</p>
+            <p>Monto: {{venta.monto}}</p>
+            <p>Otra Información: {{venta.otra_informacion}}</p>
+            <p>Producto: {{venta.producto}}</p>
+            <p>Tipo de Pago: {{venta.tipo_pago}}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

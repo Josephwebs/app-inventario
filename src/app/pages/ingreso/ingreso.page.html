@@ -1,0 +1,30 @@
+<ion-content class="ion-padding magnolia">
+  <center>
+    <img class="logo" src="../../../assets/img/logo.png" alt="monster inc" />
+    <ion-text>
+      <h1 style="text-shadow: 2px 2px 5px #000000">
+        Bienvenido/a al Inventario
+      </h1>
+    </ion-text>
+  </center>
+  <ion-item class="ion-margin-top inputRedondo" lines="none">
+    <ion-label position="stacked">Correo</ion-label>
+    <ion-input [(ngModel)]="mdl_correo">
+      <ion-icon name="mail-outline"></ion-icon>
+    </ion-input>
+  </ion-item>
+  <ion-item class="ion-margin-top inputRedondo">
+    <ion-label position="stacked">Contraseña</ion-label>
+    <ion-input type="password" [(ngModel)]="mdl_pass">
+      <ion-icon name="key" slot="start"></ion-icon>
+    </ion-input>
+  </ion-item>
+
+  <ion-button
+    (click)="login()"
+    expand="block"
+    class="oscuro ion-margin-top primario-bg-button"
+    color="ion-color-warning"
+    >Ingresar</ion-button
+  >
+</ion-content>
