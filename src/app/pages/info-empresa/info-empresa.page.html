@@ -1,0 +1,48 @@
+<ion-content
+  [fullscreen]="true"
+  class="ion-padding magnolia ion-page"
+  id="main-content"
+>
+  <ion-button
+    (click)="volver()"
+    expand="block"
+    color="ion-color-warning"
+    class="primario-bg-button"
+  >
+    Volver
+  </ion-button>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="5">
+        <img
+          class="logo"
+          src="../../../assets/img/logo.png"
+          alt="monster inc"
+        />
+      </ion-col>
+    </ion-row>
+
+    <!-- Información de la empresa -->
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12">
+        <ion-card color="light">
+          <ion-card-header>
+            <ion-card-title>Información de la Empresa</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p>Nombre: {{ informacionEmpresa.Nombre }}</p>
+            <p>RUT: {{ informacionEmpresa.RUT }}</p>
+            <p>Dirección: {{ informacionEmpresa.Direccion }}</p>
+            <p>
+              Correo Electrónico: {{ informacionEmpresa.correo_electronico }}
+            </p>
+            <p>Giro: {{ informacionEmpresa.Giro }}</p>
+            <p>
+              Número de Contacto: {{ informacionEmpresa.Numero_de_Contacto }}
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

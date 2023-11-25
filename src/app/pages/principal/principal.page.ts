@@ -114,4 +114,8 @@ export class PrincipalPage implements OnInit {
     this.router.navigate(['editar-producto']);
     loading.dismiss();
   }
+
+  infoEmpresa() {
+    this.router.navigate(['info-empresa']);
+  }
 }

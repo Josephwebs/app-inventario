@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ApiService {
-  ruta: string = 'http://127.0.0.1:5000'; //ruta para cuando se levanta la app en web
-  //ruta: string = 'http://10.0.2.2:5000'; // ruta para cuando se levanta la app en emulador
+  //ruta: string = 'http://127.0.0.1:5000'; //ruta para cuando se levanta la app en web
+  ruta: string = 'http://10.0.2.2:5000'; // ruta para cuando se levanta la app en emulador
 
   //la diferenciacion esque si usaramos la ruta localhost mientras estamos en el emulador,
   //la app detectara localhost como el mismo telefono, en este caso la ruta correcta seria la segunda
@@ -137,6 +137,16 @@ export class ApiService {
           console.error('Error al obtener el producto por ID:', error.message);
           reject(error);
         });
+    });
+  }
+
+  obtenerInformacionEmpresa() {
+    let that = this;
+
+    return new Promise((resolve) => {
+      resolve(
+        that.http.get(that.ruta + '/api/informacion_empresa').toPromise()
+      );
     });
   }
 }

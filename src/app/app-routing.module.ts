@@ -65,6 +65,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'info-empresa',
+    loadChildren: () =>
+      import('./pages/info-empresa/info-empresa.module').then(
+        (m) => m.InfoEmpresaPageModule
+      ),
+  },
+  {
     path: '**',
     loadChildren: () =>
       import('./pages/e404/e404.module').then((m) => m.E404PageModule),

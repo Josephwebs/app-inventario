@@ -98,4 +98,7 @@ export class EditarProductoPage implements OnInit {
 
     await toast.present();
   }
+  volver() {
+    this.router.navigate(['principal']);
+  }
 }
