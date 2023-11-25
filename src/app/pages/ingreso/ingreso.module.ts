@@ -9,12 +9,7 @@ import { IngresoPageRoutingModule } from './ingreso-routing.module';
 import { IngresoPage } from './ingreso.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    IngresoPageRoutingModule
-  ],
-  declarations: [IngresoPage]
+  imports: [CommonModule, FormsModule, IonicModule, IngresoPageRoutingModule],
+  declarations: [IngresoPage],
 })
 export class IngresoPageModule {}

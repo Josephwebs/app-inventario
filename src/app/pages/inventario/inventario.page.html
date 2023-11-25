@@ -1,0 +1,47 @@
+<ion-content
+  [fullscreen]="true"
+  class="ion-padding magnolia ion-page"
+  id="main-content"
+>
+  <ion-grid>
+    <ion-button
+      expand="block"
+      color="ion-color-warning"
+      class="primario-bg-button"
+      (click)="volver()"
+    >
+      Volver
+    </ion-button>
+    <h1
+      class="ion-text-center"
+      style="text-shadow: 2px 2px 5px #000000; color: #ffffff"
+    >
+      Productos en inventario
+    </h1>
+    <ion-row>
+      <ion-col size="12" size-md="8" offset-md="2">
+        <ion-card *ngFor="let item of inventario" color="danger">
+          <ion-card-header>
+            <ion-card-title> {{ item.nombre }}</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <p>{{ item.descripcion }}</p>
+            <ion-item>
+              <ion-label>Cantidad:</ion-label>
+              <ion-badge color="primary">{{ item.cantidad }}</ion-badge>
+            </ion-item>
+            <ion-item>
+              <ion-label>Precio:</ion-label>
+              <ion-badge color="success">{{ item.precio }}</ion-badge>
+            </ion-item>
+            <ion-item>
+              <ion-label>Ubicación:</ion-label>
+              <ion-text>{{ item.ubicacion }}</ion-text>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

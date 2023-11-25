@@ -1,0 +1,9 @@
+<ion-button (click)="cerrar()">Volver</ion-button>
+<ion-content *ngIf="type === 'image/png'">
+  <img class="img-zoom" [src]="content" />
+</ion-content>
+<ion-content
+  class="tabla-container"
+  *ngIf="type === 'text/html'"
+  [innerHTML]="content"
+></ion-content>

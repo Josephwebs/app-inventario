@@ -1,0 +1,46 @@
+<ion-header></ion-header>
+
+<ion-content class="ion-padding magnolia">
+  <center>
+    <img class="logo" src="../../../assets/img/logo.png" alt="monster inc" />
+    <ion-text>
+      <h1 style="text-shadow: 2px 2px 5px #000000; color: #ffffff">
+        Registrar Usuario
+      </h1>
+    </ion-text>
+  </center>
+  <ion-item class="ion-margin-top inputRedondo" lines="none">
+    <ion-label position="stacked">Usuario</ion-label>
+    <ion-input type="email" [(ngModel)]="mdl_correo" required="true">
+      <ion-icon name="mail-outline" slot="start"></ion-icon>
+    </ion-input>
+  </ion-item>
+  <ion-item class="ion-margin-top inputRedondo">
+    <ion-label position="stacked">Contraseña</ion-label>
+    <ion-input type="password" [(ngModel)]="mdl_pass" required="true">
+      <ion-icon name="key" slot="start"></ion-icon>
+    </ion-input>
+  </ion-item>
+  <ion-item class="ion-margin-top inputRedondo">
+    <ion-label position="stacked">Rol</ion-label>
+    <ion-select [(ngModel)]="mdl_rol" required="true">
+      <ion-select-option value="1">Vendedor</ion-select-option>
+      <ion-select-option value="3">Administrador</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-button
+    (click)="registrarUser()"
+    expand="block"
+    class="primario-bg-button"
+    color="ion-color-warning"
+    >Registrar</ion-button
+  >
+
+  <ion-button
+    (click)="volver()"
+    expand="block"
+    color="ion-color-warning"
+    class="primario-bg-button"
+    >Volver</ion-button
+  >
+</ion-content>

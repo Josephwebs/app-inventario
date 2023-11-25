@@ -1,0 +1,91 @@
+<ion-header></ion-header>
+
+<ion-content class="ion-padding magnolia">
+  <center>
+    <img class="logo" src="../../../assets/img/logo.png" alt="monster inc" />
+    <ion-text>
+      <h1 style="text-shadow: 2px 2px 5px #000000; color: #ffffff">
+        Editar Producto
+      </h1>
+    </ion-text>
+  </center>
+
+  <ion-item class="ion-margin-top inputRedondo" lines="none">
+    <ion-label position="stacked">Seleccionar Producto</ion-label>
+    <ion-select [(ngModel)]="selectedProductId" (ionChange)="cargarProducto()">
+      <ion-select-option
+        *ngFor="let producto of inventario"
+        [value]="producto.id"
+        >{{ producto.nombre }}</ion-select-option
+      >
+    </ion-select>
+  </ion-item>
+
+  <!-- Campos para editar -->
+  <ion-item class="ion-margin-top inputRedondo">
+    <ion-label position="stacked">Nombre del Producto</ion-label>
+    <ion-input
+      type="text"
+      [(ngModel)]="mdl_nombreProducto"
+      required="true"
+    ></ion-input>
+  </ion-item>
+
+  <ion-item class="ion-margin-top inputRedondo">
+    <ion-label position="stacked">Descripción</ion-label>
+    <ion-textarea [(ngModel)]="mdl_descripcion" required="true"></ion-textarea>
+  </ion-item>
+
+  <ion-item class="ion-margin-top inputRedondo">
+    <ion-label position="stacked">Cantidad</ion-label>
+    <ion-input
+      type="number"
+      [(ngModel)]="mdl_cantidad"
+      required="true"
+    ></ion-input>
+  </ion-item>
+
+  <ion-item class="ion-margin-top inputRedondo">
+    <ion-label position="stacked">Precio</ion-label>
+    <ion-input
+      type="number"
+      [(ngModel)]="mdl_precio"
+      required="true"
+    ></ion-input>
+  </ion-item>
+
+  <ion-item class="ion-margin-top inputRedondo">
+    <ion-label position="stacked">Ubicación</ion-label>
+    <ion-input
+      type="text"
+      [(ngModel)]="mdl_ubicacion"
+      required="true"
+    ></ion-input>
+  </ion-item>
+
+  <ion-item class="ion-margin-top inputRedondo">
+    <ion-label position="stacked">Cantidad Máxima</ion-label>
+    <ion-input
+      type="number"
+      [(ngModel)]="mdl_cantidadMaxima"
+      required="true"
+    ></ion-input>
+  </ion-item>
+
+  <ion-item class="ion-margin-top inputRedondo">
+    <ion-label position="stacked">Cantidad Mínima</ion-label>
+    <ion-input
+      type="number"
+      [(ngModel)]="mdl_cantidadMinima"
+      required="true"
+    ></ion-input>
+  </ion-item>
+
+  <ion-button
+    (click)="guardarCambios()"
+    expand="block"
+    class="primario-bg-button"
+    color="ion-color-warning"
+    >Guardar Cambios</ion-button
+  >
+</ion-content>

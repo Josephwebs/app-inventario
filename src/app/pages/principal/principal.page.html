@@ -16,6 +16,7 @@
 
   <ion-content class="ion-padding">
     <ion-button
+      hidden
       expand="block"
       color="ion-color-warning"
       class="primario-bg-button"
@@ -29,12 +30,14 @@
       >Ventas</ion-button
     >
     <ion-button
+      (click)="informes()"
       expand="block"
       color="ion-color-warning"
       class="primario-bg-button"
       >Informes</ion-button
     >
     <ion-button
+      (click)="inventario()"
       expand="block"
       color="ion-color-warning"
       class="primario-bg-button"
@@ -51,18 +54,21 @@
   </ion-header>
   <ion-content class="ion-padding">
     <ion-button
+      (click)="registro()"
       expand="block"
       color="ion-color-warning"
       class="primario-bg-button"
       >Registrar usuario</ion-button
     >
     <ion-button
+      (click)="registrarProducto()"
       expand="block"
       color="ion-color-warning"
       class="primario-bg-button"
       >Registro Producto</ion-button
     >
     <ion-button
+      (click)="editarProducto()"
       expand="block"
       color="ion-color-warning"
       class="primario-bg-button"

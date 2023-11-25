@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-
+import { CommonModule } from '@angular/common';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
@@ -13,9 +13,12 @@ import { SQLite } from '@ionic-native/sqlite/ngx';
 import * as CordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
 import { Drivers } from '@ionic/storage';
 import { IonicStorageModule } from '@ionic/storage-angular';
+import { File } from '@ionic-native/file/ngx';
+import { ModalComponent } from './components/modal/modal.component';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ModalComponent],
   imports: [
+    CommonModule,
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
@@ -29,6 +32,7 @@ import { IonicStorageModule } from '@ionic/storage-angular';
     }),
   ],
   providers: [
+    File,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     SQLite,
   ],

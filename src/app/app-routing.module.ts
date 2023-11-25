@@ -30,6 +30,41 @@ const routes: Routes = [
       import('./pages/ventas/ventas.module').then((m) => m.VentasPageModule),
   },
   {
+    path: 'informes',
+    loadChildren: () =>
+      import('./pages/informes/informes.module').then(
+        (m) => m.InformesPageModule
+      ),
+  },
+  {
+    path: 'inventario',
+    loadChildren: () =>
+      import('./pages/inventario/inventario.module').then(
+        (m) => m.InventarioPageModule
+      ),
+  },
+  {
+    path: 'registro',
+    loadChildren: () =>
+      import('./pages/registro/registro.module').then(
+        (m) => m.RegistroPageModule
+      ),
+  },
+  {
+    path: 'registro-producto',
+    loadChildren: () =>
+      import('./pages/registro-producto/registro-producto.module').then(
+        (m) => m.RegistroProductoPageModule
+      ),
+  },
+  {
+    path: 'editar-producto',
+    loadChildren: () =>
+      import('./pages/editar-producto/editar-producto.module').then(
+        (m) => m.EditarProductoPageModule
+      ),
+  },
+  {
     path: '**',
     loadChildren: () =>
       import('./pages/e404/e404.module').then((m) => m.E404PageModule),

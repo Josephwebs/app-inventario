@@ -20,7 +20,8 @@ export class PrincipalPage implements OnInit {
     private menuCtrl: MenuController,
     private router: Router,
     private api: ApiService,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private loadingController: LoadingController
   ) {}
 
   ngOnInit() {
@@ -87,5 +88,30 @@ export class PrincipalPage implements OnInit {
 
   ventas() {
     this.router.navigate(['ventas']);
+  }
+
+  informes() {
+    this.router.navigate(['informes']);
+  }
+
+  inventario() {
+    this.router.navigate(['inventario']);
+  }
+
+  registro() {
+    this.router.navigate(['registro']);
+  }
+
+  registrarProducto() {
+    this.router.navigate(['registro-producto']);
+  }
+  async editarProducto() {
+    const loading = await this.loadingController.create({
+      message: 'Cargando...',
+    });
+    // Mostrar el loading
+    await loading.present();
+    this.router.navigate(['editar-producto']);
+    loading.dismiss();
   }
 }
